@@ -9,6 +9,12 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
+
+const messaging = firebase.messaging()
+
+
 function subUser() {
-    console.log('Hello World!')
+    Notification.requestPermission().then(permission => {
+        console.log('Hello World!')
+    })
 }
