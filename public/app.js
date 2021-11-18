@@ -1,7 +1,4 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js";
-import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/8.3.0/messaging.js";
-
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,22 +16,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-const messaging = getMessaging();
-
-
-function subUser() {
-    Notification.requestPermission().then(permission => {
-        console.log('Hello Permission!', permission)
-        if (permission == "granted") {
-            getToken(messaging,
-                {
-                    vapidKey:
-                        "BJz83u2vkLJMGNrgYK23yYo8lTU8GZbUp3N7ocncOMVLkNtSB4XauseNuvNK3clAn8KbZCcfiAHOdBuYoIRXHJM"
-                }).then(currentToken => {
-                    console.log(currentToken)
-                    // document.getElementById('tokenId').innerHTML = currentToken
-                })
-        }
-    })
-}
