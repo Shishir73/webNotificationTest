@@ -1,7 +1,6 @@
-import { getMessaging } from "firebase/messaging";
+import { getMessaging, getToken } from "firebase/messaging";
 
-
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyA9UsApUsATI1c-uzBPpL3vbxbxu4jGJ6s",
     authDomain: "testingnotifications-e13b6.firebaseapp.com",
     projectId: "testingnotifications-e13b6",
@@ -19,13 +18,13 @@ function subUser() {
     Notification.requestPermission().then(permission => {
         console.log('Hello Permission!', permission)
         if (permission == "granted") {
-            messaging.getToken(
+            getToken(messaging,
                 {
                     vapidKey:
                         "BJz83u2vkLJMGNrgYK23yYo8lTU8GZbUp3N7ocncOMVLkNtSB4XauseNuvNK3clAn8KbZCcfiAHOdBuYoIRXHJM"
                 }).then(currentToken => {
                     console.log(currentToken)
-                    document.getElementById('tokenId').innerHTML = currentToken
+                    // document.getElementById('tokenId').innerHTML = currentToken
                 })
         }
     })
