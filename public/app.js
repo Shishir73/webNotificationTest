@@ -1,4 +1,7 @@
-const firebaseConfig = {
+import { getMessaging } from "firebase/messaging";
+
+
+var firebaseConfig = {
     apiKey: "AIzaSyA9UsApUsATI1c-uzBPpL3vbxbxu4jGJ6s",
     authDomain: "testingnotifications-e13b6.firebaseapp.com",
     projectId: "testingnotifications-e13b6",
@@ -9,7 +12,7 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-const messaging = firebase.messaging()
+const messaging = getMessaging();
 
 
 function subUser() {

@@ -1,7 +1,7 @@
 importScripts("https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js")
 importScripts("https://www.gstatic.com/firebasejs/8.3.0/firebase-messaging.js")
 
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyA9UsApUsATI1c-uzBPpL3vbxbxu4jGJ6s",
     authDomain: "testingnotifications-e13b6.firebaseapp.com",
     projectId: "testingnotifications-e13b6",
