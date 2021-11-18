@@ -8,13 +8,16 @@ const firebaseConfig = {
     measurementId: "G-JH74H9TSH0"
 };
 firebase.initializeApp(firebaseConfig);
-
-
 const messaging = firebase.messaging()
 
 
 function subUser() {
     Notification.requestPermission().then(permission => {
-        console.log('Hello World!')
+        console.log('Hello Permission!', permission)
+        if (permission == "granted") {
+            messaging.getToken({ vapidKey: "BJz83u2vkLJMGNrgYK23yYo8lTU8GZbUp3N7ocncOMVLkNtSB4XauseNuvNK3clAn8KbZCcfiAHOdBuYoIRXHJM" }).then(currentToken => {
+                console.log(currentToken)
+            })
+        }
     })
 }
