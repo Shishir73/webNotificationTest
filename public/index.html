@@ -17,8 +17,8 @@
   <script>
     // const tokenDivId = 'token_div';
     // const permissionDivId = 'permission_div';
-    importScripts("https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js")
-    importScripts("https://www.gstatic.com/firebasejs/8.3.0/firebase-messaging.js")
+    // importScripts("https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js")
+    // importScripts("https://www.gstatic.com/firebasejs/8.3.0/firebase-messaging.js")
     // importScripts('/__/firebase/9.2.0/firebase-app-compat.js');
     // importScripts('/__/firebase/9.2.0/firebase-messaging-compat.js');
     // importScripts('app.js');
@@ -33,8 +33,7 @@
       measurementId: "G-JH74H9TSH0"
     };
     firebase.initializeApp(firebaseConfig);
-    const messaging = firebase.messaging()
-
+    document.messaging = firebase.messaging()
 
     function subUser() {
       Notification.requestPermission().then(permission => {
@@ -47,7 +46,7 @@
             }).then(currentToken => {
               console.log(currentToken)
               // const messaging = firebase.getMessaging(firebaseConfig);
-              onMessage(messaging, (payload) => {
+              messaging.onMessage((payload) => {
                 console.log('Message received. ', payload);
                 // ...
               });
