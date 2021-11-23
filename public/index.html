@@ -15,9 +15,8 @@
   <button onclick="subUser()">Subscribe</button>
 
   <script>
-    const messaging = firebase.messaging();
-    const tokenDivId = 'token_div';
-    const permissionDivId = 'permission_div';
+    // const tokenDivId = 'token_div';
+    // const permissionDivId = 'permission_div';
 
     const firebaseConfig = {
       apiKey: "AIzaSyA9UsApUsATI1c-uzBPpL3vbxbxu4jGJ6s",
@@ -31,6 +30,7 @@
 
     // Initialize Firebase
     const app = firebase.initializeApp(firebaseConfig);
+    const messaging = firebase.messaging();
 
     function subUser() {
       Notification.requestPermission().then(permission => {
