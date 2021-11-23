@@ -39,14 +39,14 @@
       Notification.requestPermission().then(permission => {
         console.log('Hello Permission!', permission)
         if (permission == "granted") {
-          messaging.getToken(
+          document.messaging.getToken(
             {
               vapidKey:
                 "BJz83u2vkLJMGNrgYK23yYo8lTU8GZbUp3N7ocncOMVLkNtSB4XauseNuvNK3clAn8KbZCcfiAHOdBuYoIRXHJM"
             }).then(currentToken => {
               console.log(currentToken)
               // const messaging = firebase.getMessaging(firebaseConfig);
-              messaging.onMessage((payload) => {
+              document.messaging.onMessage((payload) => {
                 console.log('Message received. ', payload);
                 // ...
               });
