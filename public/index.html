@@ -32,7 +32,7 @@
                 "BJz83u2vkLJMGNrgYK23yYo8lTU8GZbUp3N7ocncOMVLkNtSB4XauseNuvNK3clAn8KbZCcfiAHOdBuYoIRXHJM"
             }).then(currentToken => {
               console.log(currentToken)
-              const messaging = getMessaging(firebaseApp);
+              const messaging = firebase.getMessaging(firebaseApp);
               onMessage(messaging, (payload) => {
                 console.log('Message received. ', payload);
                 // ...
